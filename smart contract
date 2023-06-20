@@ -1,0 +1,11 @@
+pragma solidity ^0.8.0;
+
+contract EtherConverter {
+    function getValues() external payable returns (uint, uint, uint) {
+        uint valueInWei = msg.value;
+        uint valueInEther = valueInWei / 1 ether;
+        uint valueInGwei = valueInWei / 1 gwei;
+        
+        return (valueInWei, valueInEther, valueInGwei);
+    }
+}
